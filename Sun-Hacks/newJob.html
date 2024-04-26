@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add new Job</title>
+</head>
+<body>
+  <img src="/logo_sh.png" alt="">
+  <section class="title">
+    <span>
+      Job Details
+    </span>
+  </section>
+  <section>
+    <input type="text" id="jobTitle" placeholder="Job Title">
+  </section>
+  <section>
+    <input type="text" id="jobDec" placeholder="Job Description">
+    <button class="add">Add Job</button>
+  </section>
+  <section class="prev-job">
+
+  </section>
+  <style>
+    body{
+      font-family: "Inter";
+    }
+    .prev-job{
+      position: absolute;
+      height:91%;
+      width: 72.5rem;
+      background-color: beige;
+      margin-top: -55rem;
+      margin-left: 41rem;
+      border-radius: 10px;
+    }
+    .title{
+      font-size: 3rem;
+      font-weight: 600;
+      background-color: #fff;
+      border:#6E00BE solid 5px;
+      padding:1rem 1rem;
+      margin-right:80rem;
+      margin-left:3rem ;
+      margin-top: 2rem;
+      border-radius: 20px;
+    }
+    button{
+      position: absolute;
+      margin-left:-16rem;
+      margin-top:23rem;
+      padding: 0.5rem 1.5rem;
+      background-color: #6E00BE;
+      color: #fff;
+      border-style: none;
+      border-radius: 8px;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    img{
+      height:8vh;
+      margin:1rem 2rem;
+    }
+    #jobTitle{
+      height: 15vh;
+      width: 35rem;
+      margin:2.5rem 3rem;
+      border-radius: 8px;
+      border:black solid 3px;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-left: 2rem;
+    }
+    #jobDec{
+      height: 45vh;
+      margin:0 3rem;
+      width: 35rem;
+      border-radius: 8px;
+      border:black solid 3px;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-left: 2rem;
+    }
+    #jobTitle::placeholder,
+    #jobDec::placeholder{
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-left: 2rem;
+    }
+  </style>
+</body>
+</html>
