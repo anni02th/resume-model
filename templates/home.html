@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Home</title>
+ </head>
+ <body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color:white;">Resume</a>
+          <form class="d-flex"  action="/search" method="POST">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="key">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container mt-5">
+        <form action="/" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Upload Resume</label><br><br>
+            <input class="form-control" name="file" type="file" id="formFile" ><br><br>
+            <button type="submit" class="btn btn-success">Upload</button>
+          </div>
+        </form>
+      </div>
+ </body>
+</html>

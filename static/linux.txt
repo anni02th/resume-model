@@ -1,0 +1,60 @@
+Linux Commands and Git 
+Configuration
+This document provides essential Linux commands and instructions for configuring Git, aimed at 
+beginners and intermediate users.
+by Ashish NagmotiAA
+Basic Linux Commands
+ls - List all files in the directory
+mkdir  - Make a directory
+cd - Change directory
+cd .. - Go back 1 folder
+ls -a - Show all files, including hidden ones
+Working with Files and 
+Directories
+touch hey . txt  - Create a file named hey . txt
+rm hey . txt  - Delete a file named hey . txt
+cat filename.ext  - Open a file
+Git Configuration
+git config --global user .name " ashish-nagmoti"  - Set your Git username 1.
+git config --global user .email " ashishnagmoti5@gmail.com "  - Set your Git email 2.
+git config --list  - View the changes made in the Git configuration 3.
+Working with Git Repositories
+Learn the basics of working with Git repositories, creating commits, and managing 
+branches.
+1 Initialize Repository
+Use git init  to initialize a repository in a folder
+2 Check Repository Status
+Use git status  to check the status of the repository and files
+3 Add and Commit Changes
+Use git add  and git commit -m "msg"  to add and commit changes
+Collaborating with GitHub
+Understand the basic commands for interacting with remote repositories 
+on GitHub.
+git remote add origin [github_repo_link]  - Link local files to GitHub 
+branch
+git push -u origin branch_name  - Push to a remote repository
+git branch  - Show all available branches
+GitHub Workflow
+Learn about forking repositories, updating forks, resolving conflicts, and other essential GitHub 
+workflows.
+Cloning a Repository
+Use git clone [URL]  to clone a public 
+repositoryUpdating a Forked Repository
+Use git fetch upstream  to update the forked 
+repository
+Advanced Git Techniques
+Explore advanced techniques for managing commits and merging branches efficiently.
+1
+Merge Conflict
+Resolve conflict when two branches have 
+conflicting changes2
+Squashing Commits
+Combine multiple commits into a single one 
+using git rebase -i
+Additional T ools and Resources
+Discover helpful tools, tips, and resources for enhancing your workflow with Git and Linux.
+1 Visual Studio Code Extension
+Use the Git extension in VS Code for a 
+user-friendly interface2 GitHub.dev
+Explore the web-based VS Code for direct 
+access to GitHub repositories

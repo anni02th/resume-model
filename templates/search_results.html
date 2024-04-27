@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Top Matching Resumes</h1>
+    <ul>
+        {% for pdf_file_name in top_pdf_file_names %}
+            <li> <a href="{{ url_for('serve_resume', filename=pdf_file_name) }}">{{ pdf_file_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
