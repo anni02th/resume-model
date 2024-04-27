@@ -1,29 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Home</title>
- </head>
- <body>
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" style="color:white;">Resume</a>
-          <form class="d-flex"  action="/search" method="POST">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="key">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-800 text-white border-b border-gray-700">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold">Resume</a>
+            </div>
         </div>
-      </nav>
-      <div class="container mt-5">
-        <form action="/" method="POST" enctype="multipart/form-data">
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Upload Resume</label><br><br>
-            <input class="form-control" name="file" type="file" id="formFile" ><br><br>
-            <button type="submit" class="btn btn-success">Upload</button>
-          </div>
+    </nav>
+    <div class="container mx-auto mt-10">
+        <form class="flex" action="/search" method="POST" enctype="multipart/form-data">
+            <input class="form-input mr-2 text-black" type="search" placeholder="Search" aria-label="Search" name="key">
+            <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-      </div>
- </body>
+        <form action="/" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-lg mt-4">
+            <div class="mb-4">
+                <label for="formFile" class="block text-gray-700 text-sm font-bold mb-2">Upload Resume</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="file" type="file" id="formFile">
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Upload
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
 </html>

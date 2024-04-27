@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding</title>
+</head>
+<body>
+    <img src="./static/logo_sh.png" alt="">
+    <section class="title">
+        <span>
+            Applicant Onboarding Form
+        </span>
+    </section>
+    <section class="data">
+        <div class="list1">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Work Space">
+            <input type="text" placeholder="Skills">
+        </div>
+        <div class="list2">
+            <input type="text" placeholder="Last Name">
+            <input type="text" placeholder="Mobile No.">
+            <input type="text" placeholder="Qualification">
+            <input type="text" placeholder="Certification">
+        </div>
+        <!-- Add a submit button -->
+        <button  name="but" id="a">Submit</button>
+    </section>
+    <script>
+         var a = document.getElementById("a");
+
+// Add an event listener for the click event on the Recruit button
+a.addEventListener('click', function() {
+    // Redirect the user to the specified URL for Recruit
+    window.location.href = "/newJob";});
+        </script>
+    <style>
+        body{
+            font-family: "Inter";
+            background-color: beige;
+        }
+        .title{
+            font-size: 3rem;
+            font-weight: 600;
+            background-color: beige;
+            margin-left:3rem ;
+            margin-top: 2rem;
+        }
+        img{
+            height:8vh;
+            margin:1rem 2rem;
+        }
+        .data{
+            display: flex;
+            flex-direction: row;
+        }
+        .list1,
+        .list2{
+            height:55vh;
+            width:53.5rem;
+            display: flex;
+            flex-direction: column;
+            margin-left:3rem;
+            gap:3rem;
+            margin-top: 4rem;
+        }
+        input{
+            padding: 1.5rem 0rem;
+            border: #6E00BE solid 3px;
+            border-radius: 10px;
+            width: 35rem;
+            color: black;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-left: 2rem;
+        }
+        input::placeholder{
+            color: black;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-left: 2rem;
+        }
+        /* Style for the submit button */
+        button[name="but"] {
+            padding: 1.5rem 3rem;
+            border: #6E00BE solid 3px;
+            border-radius: 10px;
+            background-color: #6E00BE;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 4rem;
+            margin-right: 1rem;
+        }
+        button[name="but"]:hover {
+            background-color: #4B0082;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</body>
+</html>
