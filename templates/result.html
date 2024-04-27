@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Resume Data Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js-plugin-colors/dist/Colors.min.js"></script>
+    <style>
+      canvas {
+        max-width: 800px;
+        max-height: 400px;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Top 10 Selected Resumes</h1>
+    <h2>Skills</h2>
+    <canvas id="skillsChart"></canvas>
+
+    <script>
+      var skillsData = {{ skills_data_json|safe }};
+
+      var ctx = document.getElementById('skillsChart').getContext('2d');
+      var skillsChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: skillsData.map(function(item) { return item.label; }),
+          datasets: [{
+            data: skillsData.map(function(item) { return item.value; }),
+            backgroundColor: [
+              '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+              '#FF9F40', '#00CED1', '#DDDF00', '#FF6B6B', '#8B008B'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Skills of Top 10 Selected Candidates'
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

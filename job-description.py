@@ -29,17 +29,14 @@ c = conn.cursor()
 c.execute("SELECT pdf_file_name, vector FROM resumes")
 resume_data = c.fetchall()
 
-# Calculate the cosine similarity between the job description vector and each resume vector
 similarities = []
 for resume_file_name, resume_vector_bytes in resume_data:
     resume_vector = np.frombuffer(resume_vector_bytes, dtype=np.float32)
     similarity = cosine_similarity([job_description_vector], [resume_vector])[0][0]
     similarities.append((resume_file_name, similarity))
 
-# Sort the resumes based on their cosine similarity scores in descending order
 similarities.sort(key=lambda x: x[1], reverse=True)
 
-# Display the top ten matches with their match percentages
 print("\nTop 10 Resume Matches:")
 for i, (resume_file_name, similarity) in enumerate(similarities[:10], start=1):
     match_percentage = similarity * 100

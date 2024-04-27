@@ -8,7 +8,7 @@ nlp = spacy.load("en_core_web_sm")
 
 kw_extractor = yake.KeywordExtractor()
 
-# Define an expanded dictionary of relevant keywords
+# dictionary of relevant keywords
 keyword_dict = {
     "skills": ["python", "sql", "flask", "data analysis", "electrical", "mechanical", "automation", "java", "javascript", "react", "angular", "docker", "kubernetes", "agile", "scrum", "c++", "c#", "ruby", "php", "hadoop", "spark", "tableau", "power bi", "excel", "tableau", "machine learning", "deep learning", "natural language processing", "computer vision", "devops", "git", "jenkins", "ansible", "kubernetes", "aws", "azure", "gcp", "salesforce", "sap", "oracle", "sql server", "mysql", "postgresql", "mongodb", "cassandra", "kafka", "rabbitmq", "elasticsearch", "kibana", "grafana", "prometheus", "splunk", "tableau", "power bi", "excel", "matlab", "simulink", "solidworks", "autocad", "catia", "solidworks", "project management", "agile", "scrum", "kanban", "waterfall", "six sigma", "lean", "business intelligence", "data warehousing", "etl", "data mining", "data visualization", "data engineering", "data science", "cybersecurity", "network administration", "system administration", "database administration", "software engineering", "web development", "mobile development", "game development", "embedded systems", "iot", "robotics", "ai", "ml", "dl", "nlp", "cv"],
     "certifications": ["hvac", "electrical", "welding", "pmp", "cissp", "aws", "azure", "cisco", "oracle", "google cloud", "comptia a+", "comptia network+", "comptia security+", "comptia linux+", "comptia project+", "itil", "prince2", "capm", "pmp", "cisa", "cism", "cissp", "ccna", "ccnp", "ccie", "mcsa", "mcse", "mcsd", "aws certified solutions architect", "aws certified developer", "aws certified sysops administrator", "azure certified administrator", "azure certified developer", "azure certified solutions architect", "gcp certified associate cloud engineer", "gcp certified professional cloud architect", "salesforce certified administrator", "salesforce certified developer", "salesforce certified consultant", "sap certified application associate", "sap certified technology associate", "oracle certified associate", "oracle certified professional", "mysql certified developer", "postgresql certified professional", "mongodb certified developer", "cassandra certified developer", "kafka certified developer", "elasticsearch certified engineer", "splunk certified admin", "tableau certified associate", "power bi certified data analyst"],
@@ -38,6 +38,6 @@ def extract_keywords_from_job_description(job_description):
 job_description = "We are seeking a dedicated and experienced software engineer to join our team. The ideal candidate will have a strong background in software development, with proficiency in programming languages such as Java, Python, or C++. Responsibilities include designing, implementing, and maintaining software solutions, as well as collaborating with cross-functional teams to ensure product delivery. The candidate should possess excellent problem-solving skills and be able to work independently and in a team environment. Experience with agile development methodologies and version control systems is preferred. A bachelor's degree in computer science or a related field is required, and a master's degree is a plus. Join us in our mission to innovate and create cutting-edge software products"
 
 keywords = extract_keywords_from_job_description(job_description)
-print("Extracted Keywords:")
-for keyword in keywords:
-    print(keyword)
+#print("Extracted Keywords:")
+#for keyword in keywords:
+#    print(keyword)
