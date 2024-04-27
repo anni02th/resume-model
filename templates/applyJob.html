@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a Job</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .align {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .apply {
+            background-color: #6E00BE;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+        .apply:hover {
+            transform: scale(1.05);
+        }
+        .apply h3, .apply h5 {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        .apply h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .apply h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .apply button {
+            background-color: #fff;
+            color: #6E00BE;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .apply button:hover {
+            background-color: #f4f4f4;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <div class="fixed top-0 right-0 m-4 p-4 rounded-lg shadow-lg bg-green-500 text-white {{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <div class="container">
+        <img src="./static/logo_sh.png" alt="Logo">
+        <section class="align">
+            {% for job in jobs %}
+                <div class="apply">
+                    <h3>{{ job.job_name }}</h3>
+                    <hr>
+                    <h5>{{ job.job_description }}</h5>
+                    <hr>
+                    <form action="/uploadResume" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="resume" id="resume" style="display: none;" onchange="this.form.submit()">
+                        <button type="button" onclick="document.getElementById('resume').click();">Apply</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>

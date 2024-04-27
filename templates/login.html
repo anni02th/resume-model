@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+</head>
+<body>
+	<div class="main">
+		<img src="/resume-model/static/logo_sh.png" alt="" class="logo">
+		<span>Register</span>
+		<div class="list1">
+			<input type="text" placeholder="First name" id="Fname">
+			<input type="text" placeholder="Username" id="Username">
+			<input type="text" placeholder="Password" id="Password">
+		</div>
+		<div class="list2">
+			<input type="text" placeholder="Last name" id="Lname">
+			<input type="text" placeholder="Email Address" id="Email">
+			<input type="text" placeholder="Confirm Password" id="Cpassword">
+		</div>
+		<div class="sign">
+			<button action="/submit">Sign up</button>
+		</div>
+	</div>
+</body>
+<style>
+	body{
+		background-color: #6E00BE;
+	}
+	.logo_g{
+		position:absolute;
+		height:4.2vh;
+		margin-left: -3.5rem;
+		margin-top: 2.59rem;
+	}
+	.sign{
+		margin-left: 18rem;
+		margin-top: 23rem;
+		padding-right: -1rem;
+	}
+	.sign button{
+		font-size: 1.5rem;
+		width:7rem;
+		height: 6vh;
+		background-color: #6E00BE;
+		color: bisque;
+		border-style: none;
+		border-radius: 8px;
+		margin-top:0.5rem;
+		text-align: center;
+		padding-bottom: -1rem;
+		cursor: pointer;
+	}
+	input::placeholder{
+		color: black;
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+	span{
+		margin-left:-19.5rem;
+		padding-top:10rem;
+		font-size: 4rem;
+		font-family: "Inter";
+		font-weight: 500;
+		white-space: 0;
+	}
+	img.logo{
+		height:8vh;
+		margin:3rem 5rem;
+	}
+	.main{
+		display: flex;
+		background-color: bisque;
+		height:65vh;
+		border:#6E00BE solid 5px;
+		border-radius: 30px;
+		width:70%;
+		margin:8% 15%;
+	}
+	.list1,
+	.list2{
+		height:15rem;
+		width: 20%;
+		margin:5rem 1rem;
+		margin-left:20em;
+		background-color:bisque ;
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+	}
+	.list2{
+		margin-left:40em;
+	}
+	input{
+		padding: 1.2rem 0.5rem 1rem;
+		margin-top:2rem;
+		border-radius: 8px;
+		background-color: bisque;
+		border:#6E00BE solid 3px;
+	}
+	input:hover::placeholder,
+	input:hover{
+		background-color: #6E00BE;
+        color:bisque;
+        transition: 100ms;
+	}
+
+</style>
+
+</html>

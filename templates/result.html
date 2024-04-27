@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,3 +48,57 @@
     </script>
   </body>
 </html>
+=======
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Results</title>
+</head>
+<body>
+    <img src="/resume-model/static/logo_sh.png" alt="" class="logo">
+    <section class="result">
+        {{% if results %}}
+            {{% for result in results %}}
+            <div class="content">
+                {{ result }}
+            </div>
+            {{% endfor %}}
+            {{ i++ }}
+        {{% endif %}}
+    </section>
+    <style>
+        .result{
+            background-color: bisque;
+            display: flex;
+            flex-direction: column;
+            overflow:scroll;
+            border-radius: 10px;
+            height:80vh;
+            width:95%;
+            margin:2.5% 2.5% 2.5%;
+            align-items: center;
+        }
+        .result::-webkit-scrollbar{
+            border-radius: 10px;
+        }
+        .logo{
+            height: 8vh;
+        }
+        .content{
+            width:95%;
+            margin-top:2rem;
+            margin:2rem;
+            height:8rem;
+            font-size:2rem;
+            border-radius: 8px;
+            text-align: center;
+            color:#fff;
+            background-color: #6E00be;
+        }
+    </style>
+</body>
+</html> -->
+>>>>>>> Stashed changes

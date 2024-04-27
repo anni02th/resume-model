@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Top Matching Resumes</h1>
-    <ul>
-        {% for pdf_file_name in top_pdf_file_names %}
-            <li> <a href="{{ url_for('serve_resume', filename=pdf_file_name) }}">{{ pdf_file_name }}</a></li>
-        {% endfor %}
-    </ul>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-4">Top Matching Resumes</h1>
+        <table class="w-full text-left bg-white border-collapse">
+            <thead>
+                <tr>
+                    <th class="bg-blue-100 border text-left px-8 py-4">Resume Name</th>
+                    <th class="bg-blue-100 border text-left px-8 py-4">Match Percentage</th>
+                    <th class="bg-blue-100 border text-left px-8 py-4">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for resume_file_name, match_percentage in results %}
+                    <tr class="hover:bg-gray-50">
+                        <td class="border px-8 py-4">{{ resume_file_name }}</td>
+                        <td class="border px-8 py-4">{{ match_percentage|round(2) }}%</td>
+                        <td class="border px-8 py-4">
+                            <a href="{{ url_for('serve_resume', filename=resume_file_name) }}" class="text-blue-500 hover:text-blue-700">View</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

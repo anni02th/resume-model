@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+</head>
+<body>
+    <img src="./static/logo_sh.png" alt="" class="logo">
+    <section class="title">
+        <span>Wh <img class="mag" src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/magnifying-glass-18.png" alt=""> are You ?</span>
+    </section>
+    <section class="buttons">
+        <button id="Recruit">
+            Recruiter
+        </button>
+        <button id="Applicant">
+            Applicant
+        </button>
+        <img src="./static/men.png" alt="" class="men">
+    </section>
+    <style>
+        body{
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow: scroll;
+            background-color: bisque;
+        }
+        img.logo{
+            height: 8vh;
+            margin-top: 2rem;
+            margin-left: 2rem;
+            position: relative;
+        }
+        img.mag{
+            height:15vh;
+            margin-left: -45px;
+            margin-right: -50px;
+            margin-bottom: -50px;
+        }
+        img.men{
+            position: absolute;
+            margin-top: 5rem;
+        }
+        .title{
+            font-size: 5rem;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            text-align: center;
+            margin-top:10%;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            gap:3rem;
+            margin-left: 36%;
+            margin-top: 5vh;
+        }
+        #Recruit,
+        #Applicant{
+            padding: 0.3rem 1.5rem;
+            font-size:2rem;
+            border-radius: 8px;
+            background-color: bisque;
+            border:#6E00BE solid 3px;
+            cursor: pointer;
+            transition: 400ms;
+        }
+        #Recruit:hover,
+        #Applicant:hover{
+            background-color: #6E00BE;
+            color:bisque;
+            transition: 300ms;
+        }
+    </style>
+ <script>
+    // Correctly get the element by its ID for the Applicant button
+    var applicant = document.getElementById("Applicant");
+
+    // Add an event listener for the click event on the Applicant button
+    applicant.addEventListener('click', function() {
+        // Redirect the user to the specified URL for Applicant
+        window.location.href = "/applyJob";
+    });
+
+    // Correctly get the element by its ID for the Recruit button
+    var recruit = document.getElementById("Recruit");
+
+    // Add an event listener for the click event on the Recruit button
+    recruit.addEventListener('click', function() {
+        // Redirect the user to the specified URL for Recruit
+        window.location.href = "/onboard";
+    });
+</script>
+
+</body>
+</html>
