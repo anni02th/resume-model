@@ -1,24 +1,49 @@
-<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
-  <head>
+ <head>
     <title>Resume Data Visualization</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js-plugin-colors/dist/Colors.min.js"></script>
     <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h1, h2 {
+        text-align: center;
+        color: #333;
+      }
       canvas {
-        max-width: 800px;
-        max-height: 400px;
+        width: 500px; /* Increased width */
+        height: 500px; /* Increased height */
         margin: 0 auto;
         display: block;
       }
     </style>
-  </head>
-  <body>
-    <h1>Top 10 Selected Resumes</h1>
-    <h2>Skills</h2>
-    <canvas id="skillsChart"></canvas>
-
+ </head>
+ <body>
+    <div>
+      <h1>Top 10 Selected Resumes</h1>
+      <h2>Skills</h2>
+      <canvas id="skillsChart"></canvas>
+    </div>
+    <h2>Top 10 Resume Matches</h2>
+    <ul class="list-none space-y-2">
+      {% for resume, match_percentage in top_resumes_with_percentages %}
+      <li class="flex justify-between items-center">
+         <span class="text-gray-700">{{ resume }} - {{ match_percentage|round(2) }}%</span>
+         <!-- Optionally, add a link to download the resume PDF -->
+         <a href="{{ url_for('static', filename='resumes/' + resume) }}" class="text-blue-500 hover:underline">Download</a>
+      </li>
+      {% endfor %}
+     </ul>         
     <script>
       var skillsData = {{ skills_data_json|safe }};
 
@@ -40,65 +65,22 @@
           plugins: {
             title: {
               display: true,
-              text: 'Skills of Top 10 Selected Candidates'
+              text: 'Skills of Top 10 Selected Candidates',
+              font: {
+                size: 18
+              }
+            },
+            legend: {
+              position: 'bottom',
+              labels: {
+                font: {
+                 size: 14
+                }
+              }
             }
           }
         }
       });
     </script>
-  </body>
+ </body>
 </html>
-=======
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Results</title>
-</head>
-<body>
-    <img src="/resume-model/static/logo_sh.png" alt="" class="logo">
-    <section class="result">
-        {{% if results %}}
-            {{% for result in results %}}
-            <div class="content">
-                {{ result }}
-            </div>
-            {{% endfor %}}
-            {{ i++ }}
-        {{% endif %}}
-    </section>
-    <style>
-        .result{
-            background-color: bisque;
-            display: flex;
-            flex-direction: column;
-            overflow:scroll;
-            border-radius: 10px;
-            height:80vh;
-            width:95%;
-            margin:2.5% 2.5% 2.5%;
-            align-items: center;
-        }
-        .result::-webkit-scrollbar{
-            border-radius: 10px;
-        }
-        .logo{
-            height: 8vh;
-        }
-        .content{
-            width:95%;
-            margin-top:2rem;
-            margin:2rem;
-            height:8rem;
-            font-size:2rem;
-            border-radius: 8px;
-            text-align: center;
-            color:#fff;
-            background-color: #6E00be;
-        }
-    </style>
-</body>
-</html> -->
->>>>>>> Stashed changes
