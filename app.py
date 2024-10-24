@@ -29,7 +29,6 @@ from description_to_keyword import extract_keywords_from_job_description
 from vectorized_resume import extract_text_from_pdf
 
 
-app = Flask(__name__, template_folder='templates')
 # Define the upload folder
 UPLOAD_FOLDER = './ENGINEERING/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
